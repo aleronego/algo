@@ -3,7 +3,6 @@ using namespace std;
 
 void quickSort(int arr[], int left, int right)
 {
-    //cout << "q ";
     int i = left;
     int j = right;
     int pivot = arr[(left + right) / 2];
