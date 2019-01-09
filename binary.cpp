@@ -31,10 +31,8 @@ int main()
     int num = 0;
     cin >> num;
     if (num >= 0 && num <= 100) {
-        cout << endl
-             << binary_search(num, arr) << " found" << endl;
+        cout << binary_search(num, arr) << " found" << endl;
     } else {
-        cout << endl
-             << "Wrong number" << endl;
+        cout << "Wrong number" << endl;
     }
 }
