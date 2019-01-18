@@ -13,12 +13,12 @@ class Graph
 {
     int V;
     list<int> *adj;
-public:
-	Graph(int);
-	void addEdge(int, int);
+public:   
+    Graph(int);
+    void addEdge(int, int);
     void BFS(int);
 };
-
+    
 Graph::Graph(int v) : V(v)
 {
     adj = new list<int>[V];
@@ -27,14 +27,13 @@ Graph::Graph(int v) : V(v)
 void Graph::addEdge(int a, int b)
 {
     adj[a].push_back(b);
-    //adj[b].push_back(a);
 }
 
 void Graph::BFS(int s)
 {
     bool* visited = new bool[V];
     for(int i = 0; i < V; ++i)
-    	visited[i] = 0;
+        visited[i] = 0;
 
     list<int> queue;
 
@@ -43,17 +42,17 @@ void Graph::BFS(int s)
 
     while(!queue.empty())
     {
-    	s = queue.front();
-    	cout << s << " ";
+        s = queue.front();
+        cout << s << " ";
         queue.pop_front();
 
         for(auto it = adj[s].begin(); it != adj[s].end(); ++it)
         {
-        	if(!visited[*it])
-        	{
-        		visited[*it] = true;
-        		queue.push_back(*it);
-        	}
+            if(!visited[*it])
+            {
+                visited[*it] = true;
+                queue.push_back(*it);
+            }
         }
     }
 }
